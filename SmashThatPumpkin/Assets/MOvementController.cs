@@ -15,7 +15,7 @@ public class MOvementController : MonoBehaviour
     void Update()
     {
         float x = transform.position.x;
-         x += Input.GetAxis("Horizontal");
+         x += Input.GetAxis("Horizontal")/2;
         transform.position = new Vector3(x, 0, 0);   
         //transform.position.x = x;
 

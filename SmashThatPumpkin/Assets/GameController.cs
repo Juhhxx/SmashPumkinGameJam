@@ -19,13 +19,18 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         _controller = new Controller();
-        //_controller.Controller1.MovePlayer2.performed += ctx => Test();
+        _controller.Controller1.MovePlayer2.performed += ctx => Test();
         _timer = _timeToWait;
     }
 
     private void Start()
     {
         StartCoroutine(Timer(_timeToWait));
+    }
+
+    private void Test()
+    {
+        print("Esta a funcionar yayyy");
     }
 
     
