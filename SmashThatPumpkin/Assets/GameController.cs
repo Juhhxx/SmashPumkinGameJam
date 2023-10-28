@@ -11,16 +11,15 @@ public class GameController : MonoBehaviour
     [SerializeField] private Collider2D       _hammer;
 
 
-    private Controller _controller;
     private float      _timer;
 
     
     // Start is called before the first frame update
     void Awake()
     {
-        _controller = new Controller();
-        _controller.Controller1.MovePlayer2.performed += ctx => Test();
-        _timer = _timeToWait;
+        ///_controller = new Controller();
+        ///_controller.Controller1.MovePlayer2.performed += ctx => Test();
+        ///_timer = _timeToWait;
     }
 
     private void Start()
