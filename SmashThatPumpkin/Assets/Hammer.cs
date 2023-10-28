@@ -6,7 +6,8 @@ public class Hammer : MonoBehaviour
 {
 
     [SerializeField] private Animator _player1;
-
+    [SerializeField] private KeyCode _smash;
+    [SerializeField] private KeyCode _pass;
 
     private bool _isPlayingAnimation;
 
@@ -20,45 +21,50 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float y = Input.GetAxis("Vertical");
-        if (y < 0 && _isPlayingAnimation)
+        print(_isPlayingAnimation);
+        if (Input.GetKeyDown(_smash) && !_isPlayingAnimation)
         {
+             
             _isPlayingAnimation = true;
             _player1.Play("Smash");
 
         }
             
     }
-    private void Attack()
+    private void EndOfAnimation()
     {
 
-
+        _isPlayingAnimation = false;
         
-        Debug.Log(score);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if (collision.tag == "fail")
+        //{
+
+        //    Debug.Log("Failllll");
+        //    return;
+        //}
         if (collision.tag == "Pumpkin")
         {
-            Debug.Log("Pumpkin");
             score += 1;
+            Destroy((collision.gameObject));
         }
         else if (collision.tag == "BadPumpkin")
         {
-            Debug.Log("BadPumpkin");
             score -= 1;
+            Destroy((collision.gameObject));
         }
         else if (collision.tag == "GoldenPumpkin")
         {
-            Debug.Log("GoldenPumpkin");
             score += 3;
+            Destroy((collision.gameObject));
         }
         else if (collision.tag == "fail")
         {
-            Debug.Log("Failllll");
         }
-        Destroy((collision.gameObject));
+        
         _player1.Play("BackToIdle");
 
     }
