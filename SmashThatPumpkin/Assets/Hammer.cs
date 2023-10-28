@@ -12,7 +12,10 @@ public class Hammer : MonoBehaviour
     [SerializeField] private Player     _playerData;
     [SerializeField] private GameController _gameController;
 
-    private int score = 0;
+    //É um evento que é invocado sempre que o score do jogador é mudado
+    //Evento-> Imagina que existe uma conta de Twitter e outras contas dão follow
+    //Sempre que esta conta fazer um post as contas que deram follow serão notificadas
+    //A mesma coisa acontece com os métodos
     public Action UpdateScore;
 
     private bool _isPlayingAnimation;
@@ -26,29 +29,39 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //vê se o jogo começou
         if(_gameController.GameStarted)
         {
+            //vê o input
             float y = Input.GetAxisRaw("Vertical");
+            //Se o input for negativo e a animação não estiver a dar
             if (y < 0 && !_isPlayingAnimation)
             {
+               
                 _isPlayingAnimation = true;
+                //dá play a animação
                 _player1.Play("Smash");
 
             }
         }
-
+        //Vê se o jogo acabou
         if(_gameController.GameEnd)
         {
+            //é para meter o fim de ecrã de jogo
             print("Game End");
         }
 
         
     }
 
+    /// <summary>
+    /// Chamado pela animação quando ela acaba
+    /// </summary>
     private void EndOfAnimation()
     {
         _isPlayingAnimation = false;
     }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
