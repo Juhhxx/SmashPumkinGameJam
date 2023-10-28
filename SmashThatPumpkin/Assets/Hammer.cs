@@ -27,6 +27,7 @@ public class Hammer : MonoBehaviour
         if(_gameContrller.GameStarted)
         {
             float y = Input.GetAxisRaw("Vertical");
+            print(y);
             if (y < 0 && !_isPlayingAnimation)
             {
                 _isPlayingAnimation = true;
@@ -35,6 +36,7 @@ public class Hammer : MonoBehaviour
                 Debug.Log(score);
             }
         }
+
         
     }
 
@@ -47,7 +49,7 @@ public class Hammer : MonoBehaviour
     {
         if (collision.tag == "Pumpkin")
         {
-            
+            print("here");
             _playerData.Score += 1;
             UpdateScore.Invoke();
             Destroy((collision.gameObject));
@@ -69,6 +71,6 @@ public class Hammer : MonoBehaviour
             Debug.Log("Failllll");
         }
         
-        _player1.Play("BackToIdle");
+        //_player1.Play("BackToIdle");
     }
 }
