@@ -1,0 +1,114 @@
+{
+    "name": "Controller",
+    "maps": [
+        {
+            "name": "Controller1",
+            "id": "b6bf3b33-2804-4400-a5fc-d2dc3e57045e",
+            "actions": [
+                {
+                    "name": "Smash",
+                    "type": "Button",
+                    "id": "23e7d140-5b52-45c2-9316-db54dc732149",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dismiss",
+                    "type": "Button",
+                    "id": "11b3c18e-d034-44fc-bbe2-0de7728bc37a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MovePlayer2",
+                    "type": "Button",
+                    "id": "325036e6-ff2b-4d0a-8a01-465bf56f41d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MovePlayer3",
+                    "type": "Button",
+                    "id": "36a68ccd-0c0c-4d52-867f-4c073b4e1610",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MovePlayer4",
+                    "type": "Button",
+                    "id": "13f0daa6-9e7b-4722-bb33-6363d028f484",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4b4c6795-976d-46c1-ba8d-0d8579e49261",
+                    "path": "<DualShockGamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Smash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "804bf1c9-73aa-47dd-8782-b9c686ee30c9",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dismiss",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09db5b74-427e-4d92-accb-7eed1e3e4c52",
+                    "path": "<DualShockGamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovePlayer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3829b0a-49ba-4136-8061-34e991d0bc5c",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovePlayer3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f8c6c54-a080-4edd-a7ed-0cc2d9146201",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovePlayer4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
