@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,12 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
 
-    [SerializeField] private Animator _player1;
+    [SerializeField] private Animator   _player1;
+    [SerializeField] private Animator   _player2;
+    [SerializeField] private Player     _playerData;
+    
     private int score = 0;
+    public Action UpdateScore;
 
     private bool _isPlayingAnimation;
     // Start is called before the first frame update
@@ -19,7 +24,6 @@ public class Hammer : MonoBehaviour
     void Update()
     {
         float y = Input.GetAxisRaw("Vertical");
-        print(y);
         if (y < 0 && !_isPlayingAnimation)
         {
             _isPlayingAnimation = true;
@@ -38,20 +42,21 @@ public class Hammer : MonoBehaviour
     {
         if (collision.tag == "Pumpkin")
         {
-            Debug.Log("Pumpkin");
-            score += 1;
+            
+            _playerData.Score += 1;
+            UpdateScore.Invoke();
             Destroy((collision.gameObject));
         }
         else if (collision.tag == "BadPumpkin")
         {
-            Debug.Log("BadPumpkin");
-            score -= 1;
+            _playerData.Score -= 1;
+            UpdateScore.Invoke();
             Destroy((collision.gameObject));
         }
         else if (collision.tag == "GoldenPumpkin")
         {
-            Debug.Log("GoldenPumpkin");
-            score += 3;
+            _playerData.Score += 3;
+            UpdateScore.Invoke();
             Destroy((collision.gameObject));
         }
         else if (collision.tag == "fail")
