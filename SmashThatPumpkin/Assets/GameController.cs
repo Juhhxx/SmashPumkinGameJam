@@ -12,14 +12,16 @@ public class GameController : MonoBehaviour
 
 
     private float      _timer;
+    private bool       _gameStarted;
 
     
     // Start is called before the first frame update
     void Awake()
     {
-        ///_controller = new Controller();
-        ///_controller.Controller1.MovePlayer2.performed += ctx => Test();
-        ///_timer = _timeToWait;
+
+        _timer = _timeToWait;
+        _gameStarted = false;
+
     }
 
     private void Start()
@@ -40,9 +42,13 @@ public class GameController : MonoBehaviour
         print("Initial Game");
     }
 
+ 
+
     private void Update()
     {
-      
+        if (!_gameStarted)
+            return;
+
 
         
         
