@@ -6,13 +6,10 @@ public class Hammer : MonoBehaviour
 {
 
     [SerializeField] private Animator _player1;
-    [SerializeField] private KeyCode _smash;
-    [SerializeField] private KeyCode _pass;
-
-    private bool _isPlayingAnimation;
-
     private int score = 0;
 
+    private bool _isPlayingAnimation;
+    // Start is called before the first frame update
     void Awake()
     {
         _isPlayingAnimation = false;
@@ -21,51 +18,47 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(_isPlayingAnimation);
-        if (Input.GetKeyDown(_smash) && !_isPlayingAnimation)
+        float y = Input.GetAxisRaw("Vertical");
+        print(y);
+        if (y < 0 && !_isPlayingAnimation)
         {
-             
             _isPlayingAnimation = true;
             _player1.Play("Smash");
 
+            Debug.Log(score);
         }
-            
     }
+
     private void EndOfAnimation()
     {
-
         _isPlayingAnimation = false;
-        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.tag == "fail")
-        //{
-
-        //    Debug.Log("Failllll");
-        //    return;
-        //}
         if (collision.tag == "Pumpkin")
         {
+            Debug.Log("Pumpkin");
             score += 1;
             Destroy((collision.gameObject));
         }
         else if (collision.tag == "BadPumpkin")
         {
+            Debug.Log("BadPumpkin");
             score -= 1;
             Destroy((collision.gameObject));
         }
         else if (collision.tag == "GoldenPumpkin")
         {
+            Debug.Log("GoldenPumpkin");
             score += 3;
             Destroy((collision.gameObject));
         }
         else if (collision.tag == "fail")
         {
+            Debug.Log("Failllll");
         }
         
         _player1.Play("BackToIdle");
-
     }
 }
