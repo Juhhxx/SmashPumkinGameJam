@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     private float      _timer;
     private bool       _gameStarted;
 
+    public bool GameStarted => _gameStarted;
+
     
     // Start is called before the first frame update
     void Awake()
@@ -29,30 +31,20 @@ public class GameController : MonoBehaviour
         StartCoroutine(Timer(_timeToWait));
     }
 
-    private void Test()
-    {
-        print("Esta a funcionar yayyy");
-    }
 
     
 
     private void GameStart()
     {
         StopCoroutine(Timer(_timeToWait));
-        print("Initial Game");
+        _gameStarted = true;
+
+
+        
     }
 
  
 
-    private void Update()
-    {
-        if (!_gameStarted)
-            return;
-
-
-        
-        
-    }
 
     
 
