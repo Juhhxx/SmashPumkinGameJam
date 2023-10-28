@@ -419,7 +419,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.51542974
+  m_Radius: 0.53540695
 --- !u!212 &1205583424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -714,12 +714,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1984510516703342997, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755558897126690404, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 3755558897126690404, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3755558897126690404, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
       propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755558897126690404, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755558897126690404, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330929909660828332, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
