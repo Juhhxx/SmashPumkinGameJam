@@ -24,8 +24,9 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_gameContrller.GameStarted)
-        {
+        
+        ///if(_gameContrller.GameStarted)
+        ///{
             float y = Input.GetAxisRaw("Vertical");
             if (y < 0 && !_isPlayingAnimation)
             {
@@ -34,7 +35,7 @@ public class Hammer : MonoBehaviour
 
                 Debug.Log(score);
             }
-        }
+        ///}
         
     }
 
