@@ -18,15 +18,10 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-<<<<<<< HEAD
-        //_controller.Controller1.MovePlayer2.performed += ctx => Test();
+
         _timer = _timeToWait;
         _gameStarted = false;
-=======
-        ///_controller = new Controller();
-        ///_controller.Controller1.MovePlayer2.performed += ctx => Test();
-        ///_timer = _timeToWait;
->>>>>>> 650a036094963366d82315c7c91559de188ae9ce
+
     }
 
     private void Start()
