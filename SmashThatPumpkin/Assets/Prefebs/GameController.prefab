@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e06851f42226f4a9f6a0dd6bc42e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToWait: 6
-  _textMesh: {fileID: 0}
+  _timeToGameStart: 5
+  _timeOfGame: 20
   _hammer: {fileID: 0}
 --- !u!114 &8559090505925193546
 MonoBehaviour:
@@ -62,6 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player1Score: {fileID: 0}
   _player2Score: {fileID: 0}
+  _timer: {fileID: 0}
   _player1: {fileID: 11400000, guid: 3adf1ab607ed96044a0a4c8508509951, type: 2}
   _player2: {fileID: 0}
   _hammer: {fileID: 0}
+  _gameController: {fileID: 3484230607561329401}

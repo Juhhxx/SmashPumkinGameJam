@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3228233356985695996}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: hammer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 5067622313521506365}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da2de74457b70a74ab5366c0438284f2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 293dcccb2bc86eb41aa245f7a0c487db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,12 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4423a4959f9dd4e4ea27785d8d1e4d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player1: {fileID: 8473254603338311809}
-  _player2: {fileID: 0}
+  _player: {fileID: 8473254603338311809}
+  _smashButton: 115
   _pumpkin: {fileID: -5121362988461602793, guid: b93c65e6fdf50474488eea3301b9bff4, type: 3}
-  _playerData: {fileID: 11400000, guid: 3adf1ab607ed96044a0a4c8508509951, type: 2}
+  _smashAnimation: {fileID: 7400000, guid: d1606b6faa3bd35458dd6eb2309473dc, type: 2}
+  _backToIdle: {fileID: 0}
+  _playerData: {fileID: 11400000, guid: 5190f0b36ce5b1b418c65c64c067afb7, type: 2}
   _gameController: {fileID: 0}
-  PumpkinAnimator: {fileID: -5121362988461602793, guid: b93c65e6fdf50474488eea3301b9bff4, type: 3}
 --- !u!50 &3755558897126690404
 Rigidbody2D:
   serializedVersion: 4
@@ -139,10 +140,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -189,8 +190,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
+  - {x: -0.52746904, y: -0.48543653}
+  - {x: 0.5169703, y: -0.48898542}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
