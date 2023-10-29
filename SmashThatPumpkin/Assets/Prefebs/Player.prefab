@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4710519554463449055}
+  - component: {fileID: 4330929909660828332}
   - component: {fileID: 1668002534837778094}
   - component: {fileID: 8473254603338311809}
-  - component: {fileID: 4330929909660828332}
   - component: {fileID: 3755558897126690404}
   - component: {fileID: -3228233356985695996}
   m_Layer: 0
@@ -36,6 +36,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4330929909660828332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067622313521506365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4423a4959f9dd4e4ea27785d8d1e4d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 8473254603338311809}
+  _smashButton: 115
+  _pumpkin: {fileID: -5121362988461602793, guid: b93c65e6fdf50474488eea3301b9bff4, type: 3}
+  _smashAnimation: {fileID: 7400000, guid: d1606b6faa3bd35458dd6eb2309473dc, type: 2}
+  _backToIdle: {fileID: 0}
+  _playerData: {fileID: 11400000, guid: 3adf1ab607ed96044a0a4c8508509951, type: 2}
+  _gameController: {fileID: 0}
+  _pumpkinS: {fileID: 0}
 --- !u!212 &1668002534837778094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,25 +129,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4330929909660828332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5067622313521506365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4423a4959f9dd4e4ea27785d8d1e4d20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 8473254603338311809}
-  _smashButton: 115
-  _pumpkin: {fileID: -5121362988461602793, guid: b93c65e6fdf50474488eea3301b9bff4, type: 3}
-  _smashAnimation: {fileID: 7400000, guid: d1606b6faa3bd35458dd6eb2309473dc, type: 2}
-  _backToIdle: {fileID: 0}
-  _playerData: {fileID: 11400000, guid: 5190f0b36ce5b1b418c65c64c067afb7, type: 2}
-  _gameController: {fileID: 0}
 --- !u!50 &3755558897126690404
 Rigidbody2D:
   serializedVersion: 4

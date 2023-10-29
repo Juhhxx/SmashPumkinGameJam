@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
     //A mesma coisa acontece com os métodos
     public Action<int> UpdateTimer;
 
+    public Action Endgame;
+
 
     /// <summary>
     /// Dá os valores às variáveis
@@ -69,6 +71,7 @@ public class GameController : MonoBehaviour
     private void SetGameEnd()
     {
         _gameEnd = true;
+        Endgame.Invoke();
     }
 
 

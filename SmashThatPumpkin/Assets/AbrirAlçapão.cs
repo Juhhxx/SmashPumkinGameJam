@@ -5,7 +5,10 @@ using UnityEngine;
 public class AbrirAlçapão : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Animator openup;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private AnimationClip _openClip;
+    [SerializeField] private AnimationClip _closeClip;
+    [SerializeField] private KeyCode _openCommand;
     void Start()
     {
         
@@ -14,13 +17,13 @@ public class AbrirAlçapão : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(_openCommand))
         {
-            openup.Play("abrir");
+            _animator.Play(_openClip.name);
         }
-        else if (Input.GetButtonUp("Jump"))
+        else if (Input.GetKeyUp(_openCommand))
         {
-            openup.Play("fechar");
+            _animator.Play(_closeClip.name);
         }
     }
     

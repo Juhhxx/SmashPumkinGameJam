@@ -7,11 +7,10 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
 
-    [SerializeField] private Animator       _player;
+    [SerializeField] private Animator       _playerAnimator;
     [SerializeField] private KeyCode        _smashButton;
     [SerializeField] private Animator       _pumpkin;
     [SerializeField] private AnimationClip      _smashAnimation;
-    [SerializeField] private Animation      _backToIdle;
     [SerializeField] private Player         _playerData;
     [SerializeField] private GameController _gameController;
     [SerializeField] private PumpkinSpawner _pumpkinS;
@@ -27,8 +26,7 @@ public class Hammer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (_pumpkinS.CurrentPumpkin != null)
-            _pumpkinC = _pumpkinS.CurrentPumpkin.GetComponent<PumpkinController>();
+        
         _playerData.Score = 0;
         _isPlayingAnimation = false;
         
@@ -37,7 +35,9 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(_playerData.Score);
+
+        if (_pumpkinS.CurrentPumpkin != null)
+            _pumpkinC = _pumpkinS.CurrentPumpkin.GetComponent<PumpkinController>();
 
 
         //ver se o jogo começou
@@ -51,16 +51,12 @@ public class Hammer : MonoBehaviour
                
                 _isPlayingAnimation = true;
                 //d� play a anima��o
-                _player.Play(_smashAnimation.name);
+                _playerAnimator.Play(_smashAnimation.name);
 
             }
         }
         //V� se o jogo acabou
-        if(_gameController.GameEnd)
-        {
-            //� para meter o fim de ecr� de jogo
-            print("Game End");
-        }
+      
 
         
     }

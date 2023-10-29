@@ -11,6 +11,7 @@ public class PumpkinController : MonoBehaviour
 
     void Start()
     {
+        hasFallen = false;
         animationP = GetComponent<Animator>();
         gameObject.SetActive(true);
     }

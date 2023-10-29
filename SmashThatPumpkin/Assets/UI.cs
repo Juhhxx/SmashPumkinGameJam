@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI    _player1Score;
     [SerializeField] TextMeshProUGUI    _player2Score;
     [SerializeField] TextMeshProUGUI    _timer;
+    [SerializeField] TextMeshProUGUI        _endScreen;
     [SerializeField] Player             _player1;
     [SerializeField] Player             _player2;
     [SerializeField] Hammer             _hammer;
@@ -20,6 +21,7 @@ public class UI : MonoBehaviour
     {
         _hammer.UpdateScore += UpdateScore;
         _gameController.UpdateTimer += UpdateTimer;
+        _gameController.Endgame += ShowEndScreen;
     }
 
     /// <summary>
@@ -28,7 +30,10 @@ public class UI : MonoBehaviour
     /// </summary>
     private void OnDisable()
     {
-        //_hammer.UpdateScore -= UpdateScore;
+        _hammer.UpdateScore -= UpdateScore;
+        _gameController.UpdateTimer -= UpdateTimer;
+        _gameController.Endgame -= ShowEndScreen;
+
     }
 
     /// <summary>
@@ -38,6 +43,16 @@ public class UI : MonoBehaviour
     private void UpdateTimer(int time)
     {
         _timer.text = time.ToString();
+    }
+
+    private void ShowEndScreen()
+    {
+        if (_player1.Score > _player2.Score)
+            _endScreen.text = "The Winner is " + _player1.name.ToString();
+        else if (_player1.Score < _player2.Score)
+            _endScreen.text = "The Winner is " + _player2.name.ToString();
+        else
+            _endScreen.text = "Draw";
     }
 
     /// <summary>
