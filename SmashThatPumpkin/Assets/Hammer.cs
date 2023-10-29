@@ -76,23 +76,23 @@ public class Hammer : MonoBehaviour
         {
            
             _playerData.Score += 1;
-            UpdateScore.Invoke();
+            
         }
         else if (collision.tag == "BadPumpkin")
         {
             _playerData.Score -= 1;
-            UpdateScore.Invoke();
         }
         else if (collision.tag == "GoldenPumpkin")
         {
             _playerData.Score += 3;
-            UpdateScore.Invoke();
         }
         else if (collision.tag == "fail")
         {
             Debug.Log("Failllll");
         }
-        
-     
+        UpdateScore.Invoke();
+
+
+
     }
 }
