@@ -7,10 +7,12 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
 
-    [SerializeField] private Animator   _player1;
-    [SerializeField] private Animator   _player2;
-    [SerializeField] private Animator _pumpkin;
-    [SerializeField] private Player     _playerData;
+    [SerializeField] private Animator       _player;
+    [SerializeField] private KeyCode        _smashButton;
+    [SerializeField] private Animator       _pumpkin;
+    [SerializeField] private AnimationClip      _smashAnimation;
+    [SerializeField] private Animation      _backToIdle;
+    [SerializeField] private Player         _playerData;
     [SerializeField] private GameController _gameController;
 
     //� um evento que � invocado sempre que o score do jogador � mudado
@@ -37,14 +39,14 @@ public class Hammer : MonoBehaviour
         {
             //v� o input
 
-            float y = Input.GetAxisRaw("Vertical");
+            
             //Se o input for negativo e a anima��o n�o estiver a dar
-            if (y < 0 && !_isPlayingAnimation)
+            if (Input.GetKeyDown(_smashButton)  && !_isPlayingAnimation)
             {
                
                 _isPlayingAnimation = true;
                 //d� play a anima��o
-                _player1.Play("Smash");
+                _player.Play(_smashAnimation.name);
 
             }
         }
