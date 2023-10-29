@@ -14,7 +14,7 @@ public class Hammer : MonoBehaviour
     [SerializeField] private Animation      _backToIdle;
     [SerializeField] private Player         _playerData;
     [SerializeField] private GameController _gameController;
-
+    private Rigidbody2D tes;
     //� um evento que � invocado sempre que o score do jogador � mudado
     //Evento-> Imagina que existe uma conta de Twitter e outras contas d�o follow
     //Sempre que esta conta fazer um post as contas que deram follow ser�o notificadas
@@ -33,11 +33,12 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(_playerData.Score);
+
 
         //ver se o jogo começou
-        if(_gameController.GameStarted)
+        if (_gameController.GameStarted && !_gameController.GameEnd)
         {
-            //v� o input
 
             
             //Se o input for negativo e a anima��o n�o estiver a dar
@@ -73,7 +74,7 @@ public class Hammer : MonoBehaviour
     {
         if (collision.tag == "Pumpkin")
         {
-            
+           
             _playerData.Score += 1;
             UpdateScore.Invoke();
         }

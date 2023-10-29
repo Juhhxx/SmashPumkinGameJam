@@ -17,14 +17,12 @@ public class PumpkinController : MonoBehaviour
          if (collision.gameObject.tag == "floor")
         {
             animationP.Play("PumInPlace");
-            Debug.Log("AAAAA");
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "hammer")
         {
-            Debug.Log("BBBBBB");
             animationP.Play("PumkSmash");
         }
         if (collision.gameObject.tag == "lixo")

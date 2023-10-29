@@ -132,9 +132,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4330929909660828332, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: _smashButton
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330929909660828332, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
       propertyPath: _gameController
       value: 
       objectReference: {fileID: 1732795388}
+    - target: {fileID: 4330929909660828332, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: _smashAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 42cb44c58d8b8a0478c036cdfbf7ef08, type: 2}
     - target: {fileID: 4710519554463449055, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.57
