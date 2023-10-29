@@ -12,7 +12,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Player : ScriptableObject
 {
     
-    public int Score {get; set;}
+    public int Score {get; set;} =0;
 
     
 }

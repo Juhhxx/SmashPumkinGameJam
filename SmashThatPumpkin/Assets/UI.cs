@@ -28,7 +28,7 @@ public class UI : MonoBehaviour
     /// </summary>
     private void OnDisable()
     {
-        _hammer.UpdateScore -= UpdateScore;
+        //_hammer.UpdateScore -= UpdateScore;
     }
 
     /// <summary>

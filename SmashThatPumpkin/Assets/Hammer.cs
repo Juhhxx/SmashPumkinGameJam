@@ -7,10 +7,12 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
 
-    [SerializeField] private Animator   _player1;
-    [SerializeField] private Animator   _player2;
-    [SerializeField] private Animator _pumpkin;
-    [SerializeField] private Player     _playerData;
+    [SerializeField] private Animator       _player;
+    [SerializeField] private KeyCode        _smashButton;
+    [SerializeField] private Animator       _pumpkin;
+    [SerializeField] private AnimationClip      _smashAnimation;
+    [SerializeField] private Animation      _backToIdle;
+    [SerializeField] private Player         _playerData;
     [SerializeField] private GameController _gameController;
     [SerializeField] private PumpkinSpawner _pumpkinS;
     private PumpkinController _pumpkinC;
@@ -35,20 +37,21 @@ public class Hammer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(_playerData.Score);
+
 
         //ver se o jogo começou
-        if(_gameController.GameStarted)
+        if (_gameController.GameStarted && !_gameController.GameEnd)
         {
-            //v� o input
 
-            float y = Input.GetAxisRaw("Vertical");
+            
             //Se o input for negativo e a anima��o n�o estiver a dar
-            if (y < 0 && !_isPlayingAnimation)
+            if (Input.GetKeyDown(_smashButton)  && !_isPlayingAnimation)
             {
                
                 _isPlayingAnimation = true;
                 //d� play a anima��o
-                _player1.Play("Smash");
+                _player.Play(_smashAnimation.name);
 
             }
         }
@@ -75,6 +78,7 @@ public class Hammer : MonoBehaviour
     {
         if (collision.tag == "Pumpkin" && _pumpkinC.GhasFallen)
         {
+           
             _playerData.Score += 1;
             UpdateScore.Invoke();
         }
