@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PumpkinSpawner : MonoBehaviour
 {
-    private bool hasPumpkin = false;
     [SerializeField] private GameObject objectToSpawn;
+    [SerializeField] private GameObject objectToSpawn2;
+    [SerializeField] private GameObject objectToSpawn3;
+    private int _pumpkinType;
     private GameObject currentPumpkin;
     
     // Start is called before the first frame update
@@ -34,8 +36,24 @@ public class PumpkinSpawner : MonoBehaviour
 
         if (currentPumpkin == null)
         {
-            currentPumpkin = Instantiate(objectToSpawn);
-            Debug.Log("Nova abobora yay");
+            _pumpkinType = Random.Range(0,99);
+
+            if (_pumpkinType <= 49)
+            {
+                currentPumpkin = Instantiate(objectToSpawn);
+                Debug.Log("Nova abobora yay");
+            }
+            else if (_pumpkinType >= 50 && _pumpkinType <= 89)
+            {
+                currentPumpkin = Instantiate(objectToSpawn2);
+                Debug.Log("Nova abobora má yay");
+            }
+            else 
+            {
+                currentPumpkin = Instantiate(objectToSpawn3);
+                Debug.Log("Nova abobora dourada yay");
+            }
+            
         }
 
     }

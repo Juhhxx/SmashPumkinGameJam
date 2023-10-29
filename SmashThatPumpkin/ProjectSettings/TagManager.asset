@@ -7,7 +7,9 @@ TagManager:
   - Pumpkin
   - GoldenPumpkin
   - BadPumpkin
-  - fail
+  - floor
+  - hammer
+  - lixo
   layers:
   - Default
   - TransparentFX

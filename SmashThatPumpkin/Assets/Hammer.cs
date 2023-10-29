@@ -9,13 +9,14 @@ public class Hammer : MonoBehaviour
 
     [SerializeField] private Animator   _player1;
     [SerializeField] private Animator   _player2;
+    [SerializeField] private Animator _pumpkin;
     [SerializeField] private Player     _playerData;
     [SerializeField] private GameController _gameController;
 
-    //É um evento que é invocado sempre que o score do jogador é mudado
-    //Evento-> Imagina que existe uma conta de Twitter e outras contas dão follow
-    //Sempre que esta conta fazer um post as contas que deram follow serão notificadas
-    //A mesma coisa acontece com os métodos
+    //ï¿½ um evento que ï¿½ invocado sempre que o score do jogador ï¿½ mudado
+    //Evento-> Imagina que existe uma conta de Twitter e outras contas dï¿½o follow
+    //Sempre que esta conta fazer um post as contas que deram follow serï¿½o notificadas
+    //A mesma coisa acontece com os mï¿½todos
     public Action UpdateScore;
 
     private bool _isPlayingAnimation;
@@ -24,48 +25,41 @@ public class Hammer : MonoBehaviour
     {
         _playerData.Score = 0;
         _isPlayingAnimation = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-        
-        ///if(_gameContrller.GameStarted)
-        ///{
-=======
-        //vê se o jogo começou
+
+        //ver se o jogo comeÃ§ou
         if(_gameController.GameStarted)
         {
-            //vê o input
->>>>>>> 9ecc24c53f203714a41828f0631b446935e13470
+            //vï¿½ o input
+
             float y = Input.GetAxisRaw("Vertical");
-            //Se o input for negativo e a animação não estiver a dar
+            //Se o input for negativo e a animaï¿½ï¿½o nï¿½o estiver a dar
             if (y < 0 && !_isPlayingAnimation)
             {
                
                 _isPlayingAnimation = true;
-                //dá play a animação
+                //dï¿½ play a animaï¿½ï¿½o
                 _player1.Play("Smash");
 
             }
-<<<<<<< HEAD
-        ///}
-=======
         }
-        //Vê se o jogo acabou
+        //Vï¿½ se o jogo acabou
         if(_gameController.GameEnd)
         {
-            //é para meter o fim de ecrã de jogo
+            //ï¿½ para meter o fim de ecrï¿½ de jogo
             print("Game End");
         }
 
->>>>>>> 9ecc24c53f203714a41828f0631b446935e13470
         
     }
 
     /// <summary>
-    /// Chamado pela animação quando ela acaba
+    /// Chamado pela animaï¿½ï¿½o quando ela acaba
     /// </summary>
     private void EndOfAnimation()
     {
@@ -77,21 +71,18 @@ public class Hammer : MonoBehaviour
     {
         if (collision.tag == "Pumpkin")
         {
-            Destroy((collision.gameObject));
+            
             _playerData.Score += 1;
             UpdateScore.Invoke();
         }
         else if (collision.tag == "BadPumpkin")
         {
-            Destroy((collision.gameObject));
             _playerData.Score -= 1;
             UpdateScore.Invoke();
         }
         else if (collision.tag == "GoldenPumpkin")
         {
-            
-            Destroy((collision.gameObject));
-            _playerData.Score -= 3;
+            _playerData.Score += 3;
             UpdateScore.Invoke();
         }
         else if (collision.tag == "fail")
