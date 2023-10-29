@@ -14,7 +14,9 @@ public class Hammer : MonoBehaviour
     [SerializeField] private Animation      _backToIdle;
     [SerializeField] private Player         _playerData;
     [SerializeField] private GameController _gameController;
-    private Rigidbody2D tes;
+    [SerializeField] private PumpkinSpawner _pumpkinS;
+    private PumpkinController _pumpkinC;
+
     //� um evento que � invocado sempre que o score do jogador � mudado
     //Evento-> Imagina que existe uma conta de Twitter e outras contas d�o follow
     //Sempre que esta conta fazer um post as contas que deram follow ser�o notificadas
@@ -25,6 +27,8 @@ public class Hammer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (_pumpkinS.CurrentPumpkin != null)
+            _pumpkinC = _pumpkinS.CurrentPumpkin.GetComponent<PumpkinController>();
         _playerData.Score = 0;
         _isPlayingAnimation = false;
         
@@ -72,17 +76,17 @@ public class Hammer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Pumpkin")
+        if (collision.tag == "Pumpkin" && _pumpkinC.GhasFallen)
         {
            
             _playerData.Score += 1;
             
         }
-        else if (collision.tag == "BadPumpkin")
+        else if (collision.tag == "BadPumpkin" && _pumpkinC.GhasFallen)
         {
             _playerData.Score -= 1;
         }
-        else if (collision.tag == "GoldenPumpkin")
+        else if (collision.tag == "GoldenPumpkin" && _pumpkinC.GhasFallen)
         {
             _playerData.Score += 3;
         }
