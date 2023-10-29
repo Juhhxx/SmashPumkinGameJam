@@ -5,11 +5,24 @@ using UnityEngine;
 public class PumpkinController : MonoBehaviour
 {
     [SerializeField] private Animator animationP;
+    private CircleCollider2D circleCollider2D;
+    private bool hasFallen = false;
+    public bool GhasFallen => hasFallen;
 
     void Start()
     {
         animationP = GetComponent<Animator>();
         gameObject.SetActive(true);
+    }
+
+    void Update()
+    {
+        Debug.Log(GhasFallen);
+    }
+
+    public void HasFallen()
+    {
+        hasFallen = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

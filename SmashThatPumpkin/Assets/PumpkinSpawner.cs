@@ -9,6 +9,7 @@ public class PumpkinSpawner : MonoBehaviour
     [SerializeField] private GameObject objectToSpawn3;
     private int _pumpkinType;
     private GameObject currentPumpkin;
+    public GameObject CurrentPumpkin => currentPumpkin;
     
     // Start is called before the first frame update
     void Start()

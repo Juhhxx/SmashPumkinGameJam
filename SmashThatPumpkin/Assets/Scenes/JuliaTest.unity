@@ -1237,6 +1237,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5121362988461602793, guid: b93c65e6fdf50474488eea3301b9bff4, type: 3}
     - target: {fileID: 4330929909660828332, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
+      propertyPath: _pumpkinS
+      value: 
+      objectReference: {fileID: 928542827}
+    - target: {fileID: 4330929909660828332, guid: 6c98c409ff9589048a278d2c510eab78, type: 3}
       propertyPath: _gameContrller
       value: 
       objectReference: {fileID: 1732795388}
